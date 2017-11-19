@@ -1,0 +1,185 @@
+.. BestConfig documentation master file, created by sphinx-quickstart on
+Tue Nov 14 10:53:55 2017. You can adapt this file completely to your
+liking, but it should at least contain the root ``toctree`` directive.
+
+QuickStart
+==========
+
+.. toctree:: :maxdepth: 2 :caption: Contents: QuickStart
+======================
+
+Good tools make system performance tuning quicker, easier and cheaper
+than if everything is done manually or by experience.
+
+Bestconfig can find better configurations for a specific large-scale
+system deployed for a given application workload.
+
+-  `Overview`_\ 
+-  `BestConfig Tuning – Taking Spark as the example SUT`_\ 
+-  `Implementing your own sampling/tuing algorithms for BestConfig`_\ 
+
+.. raw:: html
+
+   <h2 id="1">
+
+Overview
+
+	.. image:: ../pics/BestConfig.png
+		:width: 800
+			
+.. raw:: html
+
+   </h2>
+   
+
+   
+
+.. raw:: html
+
+   <p align="center">
+
+Deployment architecture
+
+.. raw:: html
+
+   </p>
+
+
+Here, “deployment environment” refers to the actual running environment
+of your applications, while “staging environment” is some environment
+that is almost the same as the deployment environment but where tests
+are run without interfering the actual application.
+
+    .. image:: ../pics/workflow.jpg
+		:width: 800
+
+
+.. raw:: html
+
+   <div>
+
+.. raw:: html
+
+   <p align="center">
+
+The process of deploying BestConfig
+
+.. raw:: html
+
+   </p>
+
+.. raw:: html
+
+   </div>
+
+The detailed method of using BestConfig to tune practical system is as
+the following, which can be showed by a case of spark tuning.
+
+.. raw:: html
+
+   <h2 id="2">
+
+BestConfig Tuning – Taking Spark as the example SUT
+
+.. raw:: html
+
+   </h2>
+
+Step 1. Deploy shells scripts for system under tune
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are 9 shell scripts in BestConfig and they are classified into two
+groups.
+
+.. raw:: html
+
+   <p>
+
+1. One group consists of 5 shell scripts. They are start.sh, isStart.sh,
+   stop.sh, isClosed.sh and terminateSystem.sh and deployed on the
+   system under tune.
+
+   .. raw:: html
+
+      </p>
+
+   .. raw:: html
+
+      <div align="center">
+
+   .. raw:: html
+
+      </div>
+
+    The scripts of start.sh and stop.sh deployed on worker and master
+   node are different.
+
+   .. raw:: html
+
+      <p>
+
+   (1) Shell scripts (start.sh and stop.sh) on master node
+
+       .. raw:: html
+
+          </p>
+
+       .. raw:: html
+
+          <div align="center">
+
+       .. raw:: html
+
+          </div>
+
+       .. raw:: html
+
+          <p align="center">
+
+       start.sh(master) – this script will start the system on the
+       master node
+
+       .. raw:: html
+
+          </p>
+
+       .. raw:: html
+
+          <div align="center">
+
+       .. raw:: html
+
+          </div>
+
+       .. raw:: html
+
+          <p align="center">
+
+       stop.sh(master) – this script will stop the system on the master
+       node
+
+       .. raw:: html
+
+          </p>
+
+       .. raw:: html
+
+          <p>
+
+       (2) Shell scripts (start.sh and stop.sh) on worker node
+
+           .. raw:: html
+
+              </p>
+
+           .. raw:: html
+
+              <div align=center>
+
+           <img
+           src=“https://github.com/zhuyuqing/bestconf/blob/master/doc/pics/start_worker.jpg”
+           align=cen
+
+.. _Overview: #1
+.. _BestConfig Tuning – Taking Spark as the example SUT: #2
+.. _Implementing your own sampling/tuing algorithms for BestConfig: #3

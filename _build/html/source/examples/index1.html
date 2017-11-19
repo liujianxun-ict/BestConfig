@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>QuickStart &mdash; BestConfig  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="BestConfig  documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BestConfig
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../how to apply/index.html">QuickStart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Use cases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BestConfig</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>QuickStart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/source/examples/index1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>Tue Nov 14 10:53:55 2017. You can adapt this file completely to your
+liking, but it should at least contain the root <code class="docutils literal"><span class="pre">toctree</span></code> directive.</p>
+<div class="section" id="quickstart">
+<h1>QuickStart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>Good tools make system performance tuning quicker, easier and cheaper
+than if everything is done manually or by experience.</p>
+<p>Bestconfig can find better configurations for a specific large-scale
+system deployed for a given application workload.</p>
+<ul class="simple">
+<li><a class="reference external" href="#1">Overview</a></li>
+<li><a class="reference external" href="#2">BestConfig Tuning – Taking Spark as the example SUT</a></li>
+<li><a class="reference external" href="#3">Implementing your own sampling/tuing algorithms for BestConfig</a></li>
+</ul>
+<h2 id="1"><p>Overview</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/BestConfig1.png"><img alt="../../_images/BestConfig1.png" src="../../_images/BestConfig1.png" style="width: 800px;" /></a>
+</div></blockquote>
+</h2><p align="center"><p>Deployment architecture</p>
+</p><p>Here, “deployment environment” refers to the actual running environment
+of your applications, while “staging environment” is some environment
+that is almost the same as the deployment environment but where tests
+are run without interfering the actual application.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/workflow1.jpg"><img alt="../../_images/workflow1.jpg" src="../../_images/workflow1.jpg" style="width: 800px;" /></a>
+</div></blockquote>
+<div><p align="center"><p>The process of deploying BestConfig</p>
+</p></div><p>The detailed method of using BestConfig to tune practical system is as
+the following, which can be showed by a case of spark tuning.</p>
+<h2 id="2"><p>BestConfig Tuning – Taking Spark as the example SUT</p>
+</h2><div class="section" id="step-1-deploy-shells-scripts-for-system-under-tune">
+<h2>Step 1. Deploy shells scripts for system under tune<a class="headerlink" href="#step-1-deploy-shells-scripts-for-system-under-tune" title="Permalink to this headline">¶</a></h2>
+<p>There are 9 shell scripts in BestConfig and they are classified into two
+groups.</p>
+<p><ol class="arabic">
+<li><p class="first">One group consists of 5 shell scripts. They are start.sh, isStart.sh,
+stop.sh, isClosed.sh and terminateSystem.sh and deployed on the
+system under tune.</p>
+</p><div align="center">  </div>
+
+The scripts of start.sh and stop.sh deployed on worker and master<p>node are different.</p>
+<p><ol class="arabic">
+<li><p class="first">Shell scripts (start.sh and stop.sh) on master node</p>
+</p><div align="center"></div><p align="center"><p>start.sh(master) – this script will start the system on the
+master node</p>
+</p><div align="center"></div><p align="center"><p>stop.sh(master) – this script will stop the system on the master
+node</p>
+</p><p><ol class="arabic" start="2">
+<li><p class="first">Shell scripts (start.sh and stop.sh) on worker node</p>
+</p><div align=center><p>&lt;img
+src=“<a class="reference external" href="https://github.com/zhuyuqing/bestconf/blob/master/doc/pics/start_worker.jpg">https://github.com/zhuyuqing/bestconf/blob/master/doc/pics/start_worker.jpg</a>”
+align=cen</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, ljx.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

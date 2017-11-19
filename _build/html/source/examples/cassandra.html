@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. BestConf for Cassandra &mdash; BestConfig  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="BestConfig  documentation" href="../../index.html"/>
+        <link rel="up" title="Use cases" href="index_usecase.html"/>
+        <link rel="next" title="4. BestConf for MySQL" href="mysql.html"/>
+        <link rel="prev" title="2. BestConf for Spark" href="spark.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BestConfig
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../how to apply/index_howtoapply.html">QuickStart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index_faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_usecase.html">Use cases</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hadoop.html">1. BestConf for Hadoop + Hive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spark.html">2. BestConf for Spark</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. BestConf for Cassandra</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#experimental-settings">3.1. Experimental Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performance-surface">3.2. Performance Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-results">3.3. Test Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interface-impl">3.4. Interface Impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download">3.5. Download</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mysql.html">4. BestConf for MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tomcat.html">5. BestConf for Tomcat Server</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BestConfig</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_usecase.html">Use cases</a> &raquo;</li>
+        
+      <li>3. BestConf for Cassandra</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/source/examples/cassandra.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bestconf-for-cassandra">
+<h1>3. BestConf for Cassandra<a class="headerlink" href="#bestconf-for-cassandra" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="experimental-settings">
+<h2>3.1. Experimental Settings<a class="headerlink" href="#experimental-settings" title="Permalink to this headline">¶</a></h2>
+<p>We executed Bestconf for the spark cluster with 4 nodes. The spark
+cluster consists of 1 master node and 3 slave nodes. All nodes used in
+our experiment are shown below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="11%" />
+<col width="59%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Node</th>
+<th class="head">OS</th>
+<th class="head">CPU</th>
+<th class="head">Memory</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cassandra 1</td>
+<td>CentOS</td>
+<td>16 Intel(R) Xeon(R) CPU E5620 &#64; 2.40GHz</td>
+<td>32GB</td>
+</tr>
+<tr class="row-odd"><td>Cassandra 2</td>
+<td>CentOS</td>
+<td>16 Intel(R) Xeon(R) CPU E5620 &#64; 2.40GHz</td>
+<td>32GB</td>
+</tr>
+<tr class="row-even"><td>Cassandra 3</td>
+<td>CentOS</td>
+<td>16 Intel(R) Xeon(R) CPU E5620 &#64; 2.40GHz</td>
+<td>32GB</td>
+</tr>
+<tr class="row-odd"><td>YCSB</td>
+<td>CentOS</td>
+<td>16 Intel(R) Xeon(R) CPU E5620 &#64; 2.40GHz</td>
+<td>32GB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="performance-surface">
+<h2>3.2. Performance Surface<a class="headerlink" href="#performance-surface" title="Permalink to this headline">¶</a></h2>
+<p>We use <a class="reference external" href="https://github.com/brianfrankcooper/YCSB">YCSB</a> that is a widely adopted benchmark tools in the workload
+generator for Cassandra to generate the target workload. Currently, the
+workload adopted in our test is workoada, and we set recorecount to
+17000000 and operationcount to 720000. Figure 1 is the scatter plot of
+performance for Cassandra under YCSB workloada.</p>
+<img alt="../../_images/cassandra-scatter.jpg" src="../../_images/cassandra-scatter.jpg" />
+<p align="center">
+
+     The scatter plot of performance for Cassandra under YCSB workloada.</p></div>
+<div class="section" id="test-results">
+<h2>3.3. Test Results<a class="headerlink" href="#test-results" title="Permalink to this headline">¶</a></h2>
+<p>The test result of Cassandra under YCSB workloada
+<a class="reference external" href="https://github.com/zhuyuqing/bestconf/blob/master/testResults/cassandra/cassandraYcsba.arff">cassandraYcsba.arff</a>.</p>
+</div>
+<div class="section" id="interface-impl">
+<h2>3.4. Interface Impl<a class="headerlink" href="#interface-impl" title="Permalink to this headline">¶</a></h2>
+<p>The source files of <a class="reference external" href="https://github.com/zhuyuqing/bestconf/blob/master/src/cassandra/cn/ict/zyq/bestConf/cluster/InterfaceImpl/CassandraConfigReadin.java">CassandraConfigReadin</a> and <a class="reference external" href="https://github.com/zhuyuqing/bestconf/blob/master/src/cassandra/cn/ict/zyq/bestConf/cluster/InterfaceImpl/CassandraConfigWrite.java">CassandraConfigWrite</a>
+implement the interfaces of <a class="reference external" href="https://github.com/zhuyuqing/bestconf/blob/master/src/main/cn/ict/zyq/bestConf/cluster/Interface/ConfigReadin.java">ConfigReadin</a> and <a class="reference external" href="https://github.com/zhuyuqing/bestconf/blob/master/src/main/cn/ict/zyq/bestConf/cluster/Interface/ConfigWrite.java">ConfigWrite</a>
+respectively.</p>
+</div>
+<div class="section" id="download">
+<h2>3.5. Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://github.com/zhuyuqing/bestconf">http://github.com/zhuyuqing/bestconf</a></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mysql.html" class="btn btn-neutral float-right" title="4. BestConf for MySQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spark.html" class="btn btn-neutral" title="2. BestConf for Spark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, ljx.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

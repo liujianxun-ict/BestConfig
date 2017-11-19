@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>QuickStart &mdash; BestConfig  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="BestConfig  documentation" href="../../index.html"/>
+        <link rel="next" title="FAQ" href="../faq/index_faq.html"/>
+        <link rel="prev" title="Welcome to BestConfig’s documentation!" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BestConfig
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">QuickStart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bestconfig-tuning-taking-spark-as-the-example-sut">BestConfig Tuning – Taking Spark as the example SUT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-deploy-shells-scripts-for-system-under-tune">Step 1. Deploy shells scripts for system under tune</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-implement-the-configreadin-and-configwrite-interfaces">Step 2. Implement the ConfigReadin and ConfigWrite interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-specify-the-parameter-set-for-tuning-and-their-ranges">Step 3. Specify the parameter set for tuning and their ranges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4-specify-the-resource-limit-and-things-about-the-tuning-environment-or-sample-size-round-number">Step 4. Specify the resource limit and things about the tuning environment (or, sample size/round number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-5-start-bestconfig">Step 5. Start BestConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#implementing-your-own-sampling-tuing-algorithms-for-bestconfig">Implementing your own sampling/tuing algorithms for BestConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index_faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index_usecase.html">Use cases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BestConfig</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>QuickStart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/source/how to apply/index_howtoapply.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="quickstart">
+<h1>QuickStart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Good tools make system performance tuning quicker, easier and cheaper
+than if everything is done manually or by experience.</p>
+<p>Bestconfig can find better configurations for a specific large-scale
+system deployed for a given application workload.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#bestconfig-tuning-taking-spark-as-the-example-sut">BestConfig Tuning – Taking Spark as the example SUT</a></li>
+<li><a class="reference internal" href="#implementing-your-own-sampling-tuing-algorithms-for-bestconfig">Implementing your own sampling/tuing algorithms for BestConfig</a></li>
+</ul>
+<p id="1"><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+</p><img alt="../../_images/BestConfig.png" src="../../_images/BestConfig.png" />
+     Deployment architecture</p></div><p>Here, “deployment environment” refers to the actual running environment
+of your applications, while “staging environment” is some environment
+that is almost the same as the deployment environment but where tests
+are run without interfering the actual application.</p>
+<a class="reference internal image-reference" href="../../_images/workflow.jpg"><img alt="../../_images/workflow.jpg" src="../../_images/workflow.jpg" style="width: 800px;" /></a>
+<div><p align="center"><p>The process of deploying BestConfig</p>
+</p></div><p>The detailed method of using BestConfig to tune practical system is as
+the following, which can be showed by a case of spark tuning.</p>
+<p id="2"></div>
+<div class="section" id="bestconfig-tuning-taking-spark-as-the-example-sut">
+<h2>BestConfig Tuning – Taking Spark as the example SUT<a class="headerlink" href="#bestconfig-tuning-taking-spark-as-the-example-sut" title="Permalink to this headline">¶</a></h2>
+</p><div class="section" id="step-1-deploy-shells-scripts-for-system-under-tune">
+<h3>Step 1. Deploy shells scripts for system under tune<a class="headerlink" href="#step-1-deploy-shells-scripts-for-system-under-tune" title="Permalink to this headline">¶</a></h3>
+<p>There are 9 shell scripts in BestConfig and they are classified into two
+groups.</p>
+<p><ol class="arabic">
+<li><p class="first">One group consists of 5 shell scripts. They are start.sh, isStart.sh,
+stop.sh, isClosed.sh and terminateSystem.sh and deployed on the
+system under tune.</p>
+</p><div align="center"></div></li>
+</ol>
+<p align="center"><img alt="../../_images/shells-tune.jpg" src="../../_images/shells-tune.jpg" />
+       </p>
+
+ The scripts of start.sh and stop.sh deployed on worker and master
+node are different.   <p>
+
+(1) Shell scripts (start.sh and stop.sh) on master node</p><p align="center"><img alt="../../_images/start.jpg" src="../../_images/start.jpg" />
+</p>   <p align="center">
+
+start.sh(master) – this script will start the system on the
+master node</p><div align="center"></div><p align="center"><img alt="../../_images/stop.jpg" src="../../_images/stop.jpg" />
+</p>           <p align="center">
+
+stop.sh(master) – this script will stop the system on the master
+node</p>       <p>
+
+(2) Shell scripts (start.sh and stop.sh) on worker node</p><p align="center"><img alt="../../_images/start_worker.jpg" src="../../_images/start_worker.jpg" />
+</p><p align="center">
+
+   start.sh(worker) – this script will start the system on the worker node</p><div align="center"></div><p align="center"><img alt="../../_images/stop_worker.jpg" src="../../_images/stop_worker.jpg" />
+</p>           <p align="center">
+
+stop.sh(worker) – this script will stop the system on the worker node</p><p><ol class="arabic" start="3">
+<li><p class="first">Identical shell scripts on master and worker node</p>
+</p><div align="center"></div></li>
+</ol>
+<p align="center"><img alt="../../_images/isStart.jpg" src="../../_images/isStart.jpg" />
+</p>   <p align="center">
+
+
+isStart.sh – this script will return OK if the system is
+successfully started</p><div align="center"></div><p align="center"><img alt="../../_images/terminateSystem.jpg" src="../../_images/terminateSystem.jpg" />
+</p>   <p align="center">
+
+terminateSystem.sh – this script will terminate the system process
+on the server</p><div align="center"></div><p align="center"><img alt="../../_images/isClosed.jpg" src="../../_images/isClosed.jpg" />
+</p>   <p align="center">
+
+isClosed.sh – this script will return OK if the system is
+successfully terminated</p><ol class="arabic" start="2">
+<li><p class="first">The other group consists of 4 shell scripts. They are startTest.sh,
+getTestResult.sh, terminateTest.sh and isFinished.sh and deployed on
+the test node.</p>
+<div align="center"></div><div align="center"></div></li>
+</ol>
+<p align="center"><img alt="../../_images/shell-test.jpg" src="../../_images/shell-test.jpg" />
+</p><p align="center"><img alt="../../_images/startTest.jpg" src="../../_images/startTest.jpg" />
+</p>   <p align="center">
+
+startTest.sh – this script will start a test towards the system under
+tune</p><div align="center"></div><img alt="../../_images/isFinished.jpg" class="align-center" src="../../_images/isFinished.jpg" />
+   <p align="center">
+
+isFinished.sh – this script will return OK if the test is done</p><div align="center"></div><p align="center"><img alt="../../_images/getTestResult.jpg" src="../../_images/getTestResult.jpg" />
+</p>       <p align="center">
+
+getTestResult.sh – this script will return performance metrics
+regarding the test</p><div align="center"></div><p align="center"><img alt="../../_images/terminateTest.jpg" src="../../_images/terminateTest.jpg" />
+</p>   <p align="center">
+
+terminateTest.sh – this script will terminate the testing process</p></div>
+<div class="section" id="step-2-implement-the-configreadin-and-configwrite-interfaces">
+<h3>Step 2. Implement the ConfigReadin and ConfigWrite interfaces<a class="headerlink" href="#step-2-implement-the-configreadin-and-configwrite-interfaces" title="Permalink to this headline">¶</a></h3>
+<p>As for spark tuning, we need to implement the ConfigReadin and
+ConfigWrite interfaces as <a class="reference external" href="https://github.com/zhuyuqing/bestconf/blob/master/src/spark/cn/ict/zyq/bestConf/cluster/InterfaceImpl/SparkConfigReadin.java">SparkConfigReadin</a> and <a class="reference external" href="https://github.com/zhuyuqing/bestconf/blob/master/src/spark/cn/ict/zyq/bestConf/cluster/InterfaceImpl/SparkConfigWrite.java">SparkConfigWrite</a>.</p>
+<p>Next, we need to compile SparkConfigReadin and SparkconfigWrite to
+bytecodes. Then the location(path) of compiled bytecodes need to be added to classpath of BestConfig project.</p>
+<p><img alt="../../_images/interface1.jpg" src="../../_images/interface1.jpg" />
+</p><p><img alt="../../_images/interface2.jpg" src="../../_images/interface2.jpg" />
+</p><p><img alt="../../_images/interface3.jpg" src="../../_images/interface3.jpg" />
+</p></div>
+<div class="section" id="step-3-specify-the-parameter-set-for-tuning-and-their-ranges">
+<h3>Step 3. Specify the parameter set for tuning and their ranges<a class="headerlink" href="#step-3-specify-the-parameter-set-for-tuning-and-their-ranges" title="Permalink to this headline">¶</a></h3>
+<p><ol class="arabic simple">
+<li>An example of defaultConfig.yaml (specifying the parameters for
+tuning)</li>
+</ol>
+</p><p><img alt="../../_images/defaultConfig.jpg" src="../../_images/defaultConfig.jpg" />
+</p>   <p>
+
+(2) An example of defaultConfig.yaml_range (the valid ranges of
+    parameters)</p><p><img alt="../../_images/defaultConfig_range.jpg" src="../../_images/defaultConfig_range.jpg" />
+</p></div>
+<div class="section" id="step-4-specify-the-resource-limit-and-things-about-the-tuning-environment-or-sample-size-round-number">
+<h3>Step 4. Specify the resource limit and things about the tuning environment (or, sample size/round number)<a class="headerlink" href="#step-4-specify-the-resource-limit-and-things-about-the-tuning-environment-or-sample-size-round-number" title="Permalink to this headline">¶</a></h3>
+<p><ol class="arabic simple">
+<li>bestconf.properties</li>
+</ol>
+</p><p><img alt="../../_images/bestconf_propertiesNew4.jpg" src="../../_images/bestconf_propertiesNew4.jpg" />
+</p><p><ol class="arabic simple" start="2">
+<li>SUTconfig.properties</li>
+</ol>
+</p><p><img alt="../../_images/SUTconfig_propertiesNew3.jpg" src="../../_images/SUTconfig_propertiesNew3.jpg" />
+</p></div>
+<div class="section" id="step-5-start-bestconfig">
+<h3>Step 5. Start BestConfig<a class="headerlink" href="#step-5-start-bestconfig" title="Permalink to this headline">¶</a></h3>
+<p>Now, you can start BestConfig. BestConfig will automatically run the
+tuning process without any requirement for user interferences, until the
+tuning process ends due to resource exhaustion or unhandlable
+environment errors.</p>
+<p>BestConfig will output the best configuration setting into files once
+the tuning is done.</p>
+<p id="3"></div>
+</div>
+<div class="section" id="implementing-your-own-sampling-tuing-algorithms-for-bestconfig">
+<h2>Implementing your own sampling/tuing algorithms for BestConfig<a class="headerlink" href="#implementing-your-own-sampling-tuing-algorithms-for-bestconfig" title="Permalink to this headline">¶</a></h2>
+</p><p>You can also choose to extend and tailor BestConfig for your specific
+use cases using your own sampling/tuning algorithms.</p>
+<p></p><ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>To implement your own sampling algorithms       –&gt; Extend the</dt>
+<dd>abstract class of ConfigSampler</dd>
+</dl>
+</li>
+</ol>
+<p><img alt="../../_images/ConfigSampler1.jpg" src="../../_images/ConfigSampler1.jpg" />
+</p><p><img alt="../../_images/ConfigSampler2.jpg" src="../../_images/ConfigSampler2.jpg" />
+</p><ol class="arabic simple" start="2">
+<li><dl class="first docutils">
+<dt>To implement your own tuning algorithms       –&gt; Implement the</dt>
+<dd>interface of Optimization</dd>
+</dl>
+</li>
+</ol>
+<p><img alt="../../_images/Optimization1.jpg" src="../../_images/Optimization1.jpg" />
+</p><p><img alt="../../_images/Optimization2.jpg" src="../../_images/Optimization2.jpg" />
+</p><p><img alt="../../_images/Optimization3.jpg" src="../../_images/Optimization3.jpg" />
+</p><p><img alt="../../_images/Optimization4.jpg" src="../../_images/Optimization4.jpg" />
+</p></div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../faq/index_faq.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../index.html" class="btn btn-neutral" title="Welcome to BestConfig’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, ljx.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

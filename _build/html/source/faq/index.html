@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ &mdash; BestConfig  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="BestConfig  documentation" href="../../index.html"/>
+        <link rel="next" title="Use cases" href="../examples/index.html"/>
+        <link rel="prev" title="QuickStart" href="../how to apply/index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BestConfig
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../how to apply/index.html">QuickStart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Use cases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BestConfig</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>FAQ</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/source/faq/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p><div class="line-block">
+<div class="line"><strong>Q1. In production environment, the scale of hadoop cluster is considerably large, for example,</strong>
+<strong>the number of nodes in hadoop cluster may reach 1500, so the overhead of staring and stopping</strong>
+    <strong>the cluster is significantly huge. In that case, is BestConfig still applicable?</strong></div>
+</div>
+</p><p><div class="line-block">
+<div class="line">No problem. This just depends on how long you can put up with the tuning process. If you
+can bear a long waiting time, then you can use Bestconfig to obtain a best configuration setting.</div>
+</div>
+</p><div class="line-block">
+<div class="line"><strong>Q2. Can BestConfig only be used for software system tuning? Can it also be able to tune hardware system?</strong></div>
+</div>
+<p><div class="line-block">
+<div class="line">Now, BestConfig can tune both software and hardware systems. Given the set of parameters of
+system (software / hardware) under tune and their valid ranges, then BestConfig is able to generate
+ a best configuration setting.</div>
+</div>
+</p><div class="line-block">
+<div class="line"><strong>Q3. Can BestConfig only be used to tune a certain system such as MySQL or Hadoop? Is it able to tune</strong>
+<strong>other systems such as database systems or big data systems.</strong></div>
+</div>
+<p><div class="line-block">
+<div class="line">Yes! BestConfig is a general system tuning tool and able to tune the widely used systems including
+MySQL, Tomcat, JVM, Hadoop(Hive),Spark, Cassandra, etc.</div>
+</div>
+</p><div class="line-block">
+<div class="line"><strong>Q4. Is BestConfig tuning process based on the online real system and workload?</strong></div>
+</div>
+<p><div class="line-block">
+<div class="line">No, the tuning process of BestConfig is run on the staging environment which is a mirror of the
+production environment, using the same actual deployment settings (e.g. hardware, clustering,
+software, etc.).</div>
+</div>
+</p><p><div class="line-block">
+<div class="line">It is mainly for a final test, using live data, of the system before production.
+And, implementing the real application workload in the workload generator is possible for the
+system in the staging environment, e.g., by log replay.</div>
+</div>
+</p><p><div class="line-block">
+<div class="line">When the tuning process on the staging
+systems ends, the best configuration setting is obtained. Then we apply the best configuration
+setting to the real system. In this way, samples can be collected without affecting applications
+on the real system deployment.</div>
+</div>
+</p><div class="line-block">
+<div class="line"><strong>Q5. The workloads generated by large number of users on the online systems are constantly changing.</strong>
+<strong>Can the workloads applied in the staging environment exactly simulate the real online workloads?</strong></div>
+</div>
+<p><div class="line-block">
+<div class="line">The application workloads can be classified into two types. One is periodic workload, the other
+is non-periodic workload. As for periodic workload, we can apply log replay to implement the real
+application workload. As for non-periodic workload, we can use benchmark to simulate a workload
+that highly similar to real application workload.</div>
+</div>
+</p><div class="line-block">
+<div class="line"><strong>Q6. How to build BestConfig project from source?</strong></div>
+</div>
+<p><div class="line-block">
+<div class="line">It’s easy for users to build BestConfig project from source. You only need to import the whole Bestconfig project into eclipse and then build it.</div>
+</div>
+</p><div class="line-block">
+<div class="line"><strong>Q7. How to use BestConfig?</strong></div>
+</div>
+<p><div class="line-block">
+<div class="line">You can use BestConfig by the following steps.</div>
+</div>
+</p><p><div class="line-block">
+<div class="line">Step 1. Download the&nbsp;latest release of BestConfig and then unzip it. After that, enter the directory of bestconf-master/deploy.</div>
+</div>
+</p><p><div class="line-block">
+<div class="line">Step 2. Set up a system for tuning. In the project, we offer deployable examples for 6 systems, including Spark, Hive+Hadoop, Cassandra, MySQL, and Tomcat. We also specify the workload generators to be used for tuning the systems.</div>
+<div class="line">The detailed steps for setting up BestConfig for you own systems are presented in&nbsp;QuickStart.</div>
+</div>
+</p><p><div class="line-block">
+<div class="line">Step 3. Run BestConfig.</div>
+<div class="line">As for linux system, firstly, you need to update all system and deployment related scripts accordingly and move them to the correct path on the servers. Next, you need to move the system-specific jar file to lib. (For example, move deploy/4BI/bestconfBI.jar to deploy/lib). At last, you enter the directory of deploy and run the shell of “start.sh”.</div>
+</div>
+</p><div class="line-block">
+<div class="line"><strong>Q8. Why did I encounter a system exception of “java.lang.ClassNotFoundException” when I tried to run BestConfig for tomcat system?</strong></div>
+</div>
+<p><div class="line-block">
+<div class="line">Firstly, you need to implement the ConfigReadin and ConfigWrite interfaces as TomcatConfigReadin and TomcatConfigWrite.</div>
+</div>
+<p><div class="line-block">
+<div class="line">Next, you need to compile TomcatConfigReadin and TomcatconfigWrite to bytecodes. After that, the location(path) of compiled bytecodes need to be added to classpath of BestConfig project.</div>
+</div>
+</p></p><div class="line-block">
+<div class="line"><strong>Q9. How can I get the detailed information of  of BestConfig’s implementation mechanism?</strong></div>
+</div>
+<p><div class="line-block">
+<div class="line">You can read the following two papers to get all the information that you need.</div>
+</div>
+</p><p><div class="line-block">
+<div class="line">[1] Yuqing ZHU, Jianxun Liu, Mengying Guo, Yungang Bao, Wenlong Ma, Zhuoyue Liu, Kunpeng Song, Yingchun Yang. BestConfig: Tapping the Performance Potential of Systems via Automatic Configuration Tuning. Proceedings of the ACM Symposium on Cloud Computing 2017 (SoCC’17) <a class="reference external" href="https://arxiv.org/abs/1710.03439">[pdf_Socc2017]</a>  <a class="reference external" href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnx6aHV5dXFpbmd8Z3g6N2MwMjQxOWJjMzE5ZmMzMw">[slides_Socc2017]</a></div>
+</div>
+</p><p><div class="line-block">
+<div class="line">[2] Yuqing ZHU, Jianxun Liu, Mengying Guo, Yungang Bao. ACTS in Need: Automatic Configuration Tuning with Scalability. Proceedings of the 8th ACM SIGOPS Asia-Pacific Workshop on Systems (APSys’17) <a class="reference external" href="https://arxiv.org/abs/1708.01349">[pdf_APSys2017]</a></div>
+</div>
+</p></div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../examples/index.html" class="btn btn-neutral float-right" title="Use cases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../how to apply/index.html" class="btn btn-neutral" title="QuickStart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, ljx.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
