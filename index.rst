@@ -14,8 +14,6 @@ Welcome to BestConfig's documentation!
    source/faq/index_faq
    source/examples/index_usecase
   
-  design
-  theme
 
 
 
