@@ -38,9 +38,6 @@ Overview
 
    </p>
 
-.. raw:: html
-
-   </div>
 
 Here, “deployment environment” refers to the actual running environment
 of your applications, while “staging environment” is some environment
@@ -50,9 +47,6 @@ are run without interfering the actual application.
 .. image:: ../pics/workflow.jpg
 		:width: 800
 
-.. raw:: html
-
-   <div>
 
 .. raw:: html
 
@@ -64,9 +58,6 @@ The process of deploying BestConfig
 
    </p>
 
-.. raw:: html
-
-   </div>
 
 The detailed method of using BestConfig to tune practical system is as
 the following, which can be showed by a case of spark tuning.
