@@ -13,7 +13,38 @@ FAQ
 .. raw:: html
 	  
 	  <p>
+| **Q1. When I tried to start bestconfig by executing start.sh, an exception of "can't find the class of bestconf" occured?** 
+      
+
+.. raw:: html
+	 
+	  </p> 
 	  
+.. raw:: html
+	  
+	  <p>
+                                                                                                  
+| You need to move bestconf.jar to deploy directory. 
+        	  
+.. raw:: html
+	 
+	  </p>    
+**Q1. Why an exception of "connection refused" occured? ** 
+      
+
+.. raw:: html
+	 
+	  </p> 
+	  
+.. raw:: html
+	  
+	  <p>
+                                                                                                  
+| You need to modify the ssh_config file located in /etc/ssh/ directory. Set the value of "PermitRootLogin" to yes and then restart the ssh service.
+        	  
+.. raw:: html
+	 
+	  </p>     
 | **Q1. In production environment, the scale of hadoop cluster is considerably large, for example,** 
       **the number of nodes in hadoop cluster may reach 1500, so the overhead of staring and stopping** 
 	  **the cluster is significantly huge. In that case, is BestConfig still applicable?**
