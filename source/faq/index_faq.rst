@@ -29,7 +29,7 @@ FAQ
 .. raw:: html
 	 
 	  </p>    
-**Q2. Why an exception of "connection refused" occured?** 
+| **Q2. Why an exception of "connection refused" occured?** 
       
 
 .. raw:: html
