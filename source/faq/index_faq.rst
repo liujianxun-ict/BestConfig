@@ -24,7 +24,7 @@ FAQ
 	  
 	  <p>
                                                                                                   
-| You need to move bestconf.jar to deploy directory. 
+| You need to move bestconf.jar to deploy directory. And remember to move the data directory to the deploy directory. 
         	  
 .. raw:: html
 	 
