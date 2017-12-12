@@ -30,6 +30,7 @@ Overview
 .. image:: ../pics/BestConfig.png
   
 .. raw:: html
+
    <p align="center">
 
 	Deployment architecture
@@ -45,7 +46,7 @@ that is almost the same as the deployment environment but where tests
 are run without interfering the actual application.
 
 .. image:: ../pics/workflow.jpg
-		:width: 800
+          :width: 800
 
 
 .. raw:: html
@@ -605,9 +606,9 @@ environment errors.
 BestConfig will output the best configuration setting into files once
 the tuning is done.
 
-You can start bestconfig with the help of ant. The detailed instructions are as follows.  
-(1). cd bestconf-maste  
-(2). ant compile  
+You can start bestconfig with the help of ant. The detailed instructions are as follows.  <br />
+(1). cd bestconf-maste  <br />
+(2). ant compile  <br />
 (3). ant run  
 
 
