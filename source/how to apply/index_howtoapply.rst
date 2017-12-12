@@ -619,13 +619,13 @@ the tuning is done.
 
 .. raw:: html
 
- <br>
-(2). ant compile
-
+ <p>
+  (2). ant compile
+  
 .. raw:: html
 
- <br>
- 
+ </p>
+
 (3). ant run  
 
 
