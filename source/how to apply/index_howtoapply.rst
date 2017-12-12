@@ -619,16 +619,12 @@ the tuning is done.
 
 .. raw:: html
 
- <br />
- 
-  You can start bestconfig with the help of ant. The detailed instructions are as follows. 
-  
-
+ <br>
 (2). ant compile
 
 .. raw:: html
 
- <br />
+ <br>
  
 (3). ant run  
 
