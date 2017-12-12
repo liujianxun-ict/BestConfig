@@ -606,8 +606,8 @@ BestConfig will output the best configuration setting into files once
 the tuning is done.
 
 You can start bestconfig with the help of ant. The detailed instructions are as follows.  
-(1). cd bestconf-master<br />
-(2). ant compile<br />
+(1). cd bestconf-master
+(2). ant compile
 (3). ant run
 
 .. raw:: html
