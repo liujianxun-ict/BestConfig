@@ -53,7 +53,7 @@ are run without interfering the actual application.
 
    <p align="center">
 
-The process of deploying BestConfig
+     The process of deploying BestConfig
 
 .. raw:: html
 
@@ -607,8 +607,8 @@ BestConfig will output the best configuration setting into files once
 the tuning is done.
 
 You can start bestconfig with the help of ant. The detailed instructions are as follows.  <br />
-(1). cd bestconf-maste  <br />
-(2). ant compile  <br />
+(1). cd bestconf-maste
+(2). ant compile
 (3). ant run  
 
 
