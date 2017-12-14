@@ -615,7 +615,7 @@ the tuning is done.
 
       </p>
 
-(1). cd bestconf-maste
+(1). cd bestconf-master
 
 .. raw:: html
 
