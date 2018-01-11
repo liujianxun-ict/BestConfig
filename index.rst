@@ -1,19 +1,19 @@
-RankEval -- Analysis and evaluation of Learning-to-Rank models
-==============================================================
+.. BestConfig documentation master file, created by
+   sphinx-quickstart on Tue Nov 14 10:53:55 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+   
+Welcome to BestConfig's documentation!
+=======================================
 
-RankEval is a Python library for the *analysis* and *evaluation* of Learning-to-Rank models 
-based on ensembles of regression trees.
-Target audience includes the *machine learning* (ML) and *information retrieval* (IR) communities.
-
-Citing RankEval
+Citing BestConfig
 ---------------
 
 Please cite::
 
-	@inproceedings{rankeval-sigir17,
-	  author = {Claudio Lucchese and Cristina Ioana Muntean and Franco Maria Nardini and
-	            Raffaele Perego and Salvatore Trani},
- 	  title = {RankEval: An Evaluation and Analysis Framework for Learning-to-Rank Solutions},
+	@inproceedings{Zhu:2017:BTP:3127479.3128605,
+	  author = {Zhu, Yuqing and Liu, Jianxun and Guo, Mengying and Bao, Yungang and Ma, Wenlong and Liu, Zhuoyue and Song, Kunpeng                       and Yang, Yingchun},
+	  title = {RankEval: An Evaluation and Analysis Framework for Learning-to-Rank Solutions},
  	  booktitle = {SIGIR 2017: Proceedings of the 40th International {ACM} {SIGIR} 
 	               Conference on Research and Development in Information Retrieval},
  	  year = {2017},
@@ -22,15 +22,9 @@ Please cite::
 
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Contents:
+   :maxdepth: 2
+   :glob:
 
-   rankeval
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   source/how to apply/index_howtoapply
+   source/faq/index_faq
+   source/examples/index_usecase
