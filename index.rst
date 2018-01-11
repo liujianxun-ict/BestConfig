@@ -6,7 +6,7 @@
 Welcome to BestConfig's documentation!
 =======================================
 
-***BestConfig*** is a system for automatically ***finding a best configuration setting within a resource limit*** for a deployed system under a given application workload. BestConfig is designed with an extensible architecture to automate the configuration tuning ***for general systems***.
+**BestConfig** is a system for automatically **finding a best configuration setting within a resource limit** for a deployed system under a given application workload. BestConfig is designed with an extensible architecture to automate the configuration tuning **for general systems**.
 
 Contents
 ++++++++
