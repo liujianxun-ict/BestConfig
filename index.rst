@@ -1,45 +1,36 @@
-.. BestConfig documentation master file, created by
-   sphinx-quickstart on Tue Nov 14 10:53:55 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-   
-Welcome to BestConfig's documentation!
-=======================================
+RankEval -- Analysis and evaluation of Learning-to-Rank models
+==============================================================
 
-Citing BestConfig
------------------
+RankEval is a Python library for the *analysis* and *evaluation* of Learning-to-Rank models 
+based on ensembles of regression trees.
+Target audience includes the *machine learning* (ML) and *information retrieval* (IR) communities.
 
-Please cite:
+Citing RankEval
+---------------
 
-	@inproceedings{Zhu:2017:BTP:3127479.3128605,
-	  author = {Zhu, Yuqing and Liu, Jianxun and Guo, Mengying and Bao, Yungang and Ma, Wenlong and Liu, Zhuoyue and Song, Kunpeng                       and Yang, Yingchun},
-	  title = {BestConfig: Tapping the Performance Potential of Systems via Automatic Configuration Tuning},
-	  booktitle = {Proceedings of the 2017 Symposium on Cloud Computing},
-          series = {SoCC '17},
-	  year = {2017},
-	  isbn = {978-1-4503-5028-0},
-          location = {Santa Clara, California},
-          pages = {338--350},
-          numpages = {13},
-          url = {http://doi.acm.org/10.1145/3127479.3128605},
-          doi = {10.1145/3127479.3128605},
-          acmid = {3128605},
-          publisher = {ACM},
-          address = {New York, NY, USA},
-          keywords = {ACT, automatic configuration tuning, performance optimization},
+Please cite::
+
+	@inproceedings{rankeval-sigir17,
+	  author = {Claudio Lucchese and Cristina Ioana Muntean and Franco Maria Nardini and
+	            Raffaele Perego and Salvatore Trani},
+ 	  title = {RankEval: An Evaluation and Analysis Framework for Learning-to-Rank Solutions},
+ 	  booktitle = {SIGIR 2017: Proceedings of the 40th International {ACM} {SIGIR} 
+	               Conference on Research and Development in Information Retrieval},
+ 	  year = {2017},
+ 	  location = {Tokyo, Japan}
 	} 
 
+
 .. toctree::
-   :maxdepth: 2
-   :glob:
+   :maxdepth: 1
+   :caption: Contents:
 
-   source/how to apply/index_howtoapply
-   source/faq/index_faq
-   source/examples/index_usecase
-  
+   rankeval
 
 
+Indices and tables
+==================
 
-
-
-
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
