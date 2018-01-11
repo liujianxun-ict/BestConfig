@@ -6,8 +6,22 @@
 Welcome to BestConfig's documentation!
 =======================================
 
+Contents
+++++++++
+
+***BestConfig*** is a system for automatically ***finding a best configuration setting within a resource limit*** for a deployed system under a given application workload. BestConfig is designed with an extensible architecture to automate the configuration tuning ***for general systems***.
+
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   source/how to apply/index_howtoapply
+   source/faq/index_faq
+   source/examples/index_usecase
+
 Citing BestConfig
----------------
++++++++++++++++++
 
 Please cite::
 
@@ -31,10 +45,4 @@ Please cite::
 	} 
 
 
-.. toctree::
-   :maxdepth: 2
-   :glob:
 
-   source/how to apply/index_howtoapply
-   source/faq/index_faq
-   source/examples/index_usecase
