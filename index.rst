@@ -14,11 +14,19 @@ Please cite::
 	@inproceedings{Zhu:2017:BTP:3127479.3128605,
 	  author = {Zhu, Yuqing and Liu, Jianxun and Guo, Mengying and Bao, Yungang and 
 	            Ma, Wenlong and Liu, Zhuoyue and Song, Kunpeng and Yang, Yingchun},
-	  title = {RankEval: An Evaluation and Analysis Framework for Learning-to-Rank Solutions},
- 	  booktitle = {SIGIR 2017: Proceedings of the 40th International {ACM} {SIGIR} 
-	               Conference on Research and Development in Information Retrieval},
+	  title = {BestConfig: Tapping the Performance Potential of Systems via Automatic Configuration Tuning},
+ 	  booktitle = {Proceedings of the 2017 Symposium on Cloud Computing},
+	  series = {SoCC '17},
  	  year = {2017},
- 	  location = {Tokyo, Japan}
+	  isbn = {978-1-4503-5028-0},
+ 	  location = {Santa Clara, California},
+	  pages = {338--350},
+	  numpages = {13},
+	  url = {http://doi.acm.org/10.1145/3127479.3128605},
+	  acmid = {3128605},
+	  publisher = {ACM},
+	  address = {New York, NY, USA},
+	  keywords = {ACT, automatic configuration tuning, performance optimization},
 	} 
 
 
