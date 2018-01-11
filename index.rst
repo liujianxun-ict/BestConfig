@@ -14,7 +14,8 @@ Please cite::
 	@inproceedings{Zhu:2017:BTP:3127479.3128605,
 	  author = {Zhu, Yuqing and Liu, Jianxun and Guo, Mengying and Bao, Yungang and 
 	            Ma, Wenlong and Liu, Zhuoyue and Song, Kunpeng and Yang, Yingchun},
-	  title = {BestConfig: Tapping the Performance Potential of Systems via Automatic Configuration Tuning},
+	  title = {BestConfig: Tapping the Performance Potential of Systems via Automatic 
+	           Configuration Tuning},
  	  booktitle = {Proceedings of the 2017 Symposium on Cloud Computing},
 	  series = {SoCC '17},
  	  year = {2017},
