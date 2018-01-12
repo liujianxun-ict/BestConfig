@@ -20,7 +20,7 @@ Contents
    source/examples/index_usecase
 
 Citing BestConfig
-+++++++++++++++++
+++++++++++++++
 
 Please cite::
 
