@@ -3,14 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
    
-BestConf for Cassandra
+BestConfig for Cassandra
 ======================
 
 
 Experimental Settings
 ---------------------
 
-We executed Bestconf for the spark cluster with 4 nodes. The spark
+We executed Bestconfig for the spark cluster with 4 nodes. The spark
 cluster consists of 1 master node and 3 slave nodes. All nodes used in
 our experiment are shown below.
 
