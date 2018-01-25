@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
    
-BestConf for MySQL
+BestConfig for MySQL
 ==================
 
 Experimental Settings
 ---------------------
 
-We executed Bestconf for the MySQL system, and we applied sysbench to
+We executed Bestconfig for the MySQL system, and we applied sysbench to
 test the performance of MySQL. All nodes used in our experiment are
 shown below.
 
