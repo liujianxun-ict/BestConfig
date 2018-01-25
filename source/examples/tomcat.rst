@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
    
-BestConf for Tomcat Server
+BestConfig for Tomcat Server
 ==========================
 
 Experimental Settings
 ---------------------
 
-We executed Bestconf for the Tomcat server, and we applied sysbench to
+We executed Bestconfig for the Tomcat server, and we applied sysbench to
 test the performance of Tomcat server. All nodes used in our experiment
 are shown below.
 
