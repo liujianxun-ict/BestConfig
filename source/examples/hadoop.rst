@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
    
-BestConf for Hadoop + Hive
+BestConfig for Hadoop + Hive
 ===========================
 
 Experimental Settings
 ---------------------
 
-We executed Bestconf for the Hadoop cluster with 4 nodes. The Hadoop
+We executed Bestconfig for the Hadoop cluster with 4 nodes. The Hadoop
 cluster consists of 1 master node and 3 slave nodes. All nodes used in
 our experiment are shown below.
 
